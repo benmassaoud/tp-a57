@@ -45,7 +45,7 @@ if __name__ == "__main__":
     alpha = 0.8 #à changer
     l1_ratio = 0.4 #à changer
 
-    mlflow.set_experiment(experiment_name='TPA57')
+    mlflow.set_experiment('TPA57')
     mlflow.set_tracking_uri("http://benmassaoud.com:5000")	
  
     with mlflow.start_run():
@@ -73,5 +73,10 @@ if __name__ == "__main__":
             outfile.write("RMSE: " + str(rmse) + "\n")
             outfile.write("MAE: " + str(mae) + "\n")
             outfile.write("R2: " + str(r2) + "\n")
+
+    
+    import pickle
+    with open('./model.pkl', 'wb') as model_pkl:
+        pickle.dump(lr, model_pkl)
 
 
