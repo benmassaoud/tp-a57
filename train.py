@@ -45,7 +45,7 @@ if __name__ == "__main__":
     alpha = 0.8 #à changer
     l1_ratio = 0.4 #à changer
 
-    mlflow.set_experiment('TPA57')
+    #mlflow.set_experiment('TPA57')
     mlflow.set_tracking_uri("http://benmassaoud.com:5000")	
  
     with mlflow.start_run():
