@@ -45,10 +45,15 @@ if __name__ == "__main__":
     alpha = 0.8 #à changer
     l1_ratio = 0.4 #à changer
 
-    #mlflow.set_experiment('TPA57')
-    mlflow.set_tracking_uri("http://benmassaoud.com:5000")	
+
+    
+    #mlflow.create_experiment('TPA57')
+    
  
     with mlflow.start_run():
+        mlflow.set_experiment('TPA57')
+
+        mlflow.set_tracking_uri("http://benmassaoud.com:5000")	
         lr = ElasticNet(alpha=alpha, l1_ratio=l1_ratio, random_state=42)
         lr.fit(train_x, train_y)
  
