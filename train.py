@@ -47,13 +47,13 @@ if __name__ == "__main__":
 
 
     
-    #mlflow.create_experiment('TPA57')
+    mlflow.create_experiment('TPA57')
     
- 
-    with mlflow.start_run():
-        mlflow.set_experiment('TPA57')
+    mlflow.set_experiment('TPA57')
 
-        mlflow.set_tracking_uri("http://benmassaoud.com:5000")	
+    mlflow.set_tracking_uri("http://benmassaoud.com:5000")
+    with mlflow.start_run():
+        	
         lr = ElasticNet(alpha=alpha, l1_ratio=l1_ratio, random_state=42)
         lr.fit(train_x, train_y)
  
