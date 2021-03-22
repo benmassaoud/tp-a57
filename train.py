@@ -79,4 +79,3 @@ if __name__ == "__main__":
     with open('./model.pkl', 'wb') as model_pkl:
         pickle.dump(lr, model_pkl)
 
-
